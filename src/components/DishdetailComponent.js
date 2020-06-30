@@ -56,12 +56,17 @@ class DishDetail extends Component {
     }
   }
   render() {
-    return (
-      <React.Fragment>
-        {this.renderDish(this.props.selectedDish)}
-        {this.renderComments(this.props.comments)}
-      </React.Fragment>
-    );
+    if (this.props.dish != null) {
+      const comments = this.props.dish.comments;
+      return (
+        <React.Fragment>
+          {this.renderDish(this.props.dish)}
+          {this.renderComments(comments)}
+        </React.Fragment>
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }
 
