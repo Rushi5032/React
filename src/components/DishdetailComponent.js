@@ -50,10 +50,12 @@ function RenderDish({ dish }) {
 const DishDetail = (props) => {
   if (props.dish != null) {
     return (
-      <React.Fragment>
-        <RenderDish dish={props.dish} />
-        <RenderComments comments={props.dish.comments} />
-      </React.Fragment>
+      <div className="container">
+        <div className="row">
+          <RenderDish dish={props.dish} />
+          <RenderComments comments={props.dish.comments} />
+        </div>
+      </div>
     );
   } else {
     return <div></div>;
